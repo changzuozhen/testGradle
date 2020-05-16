@@ -1,0 +1,48 @@
+// build.gradle
+// gradle -a hello
+task hello {
+    doLast {
+        println 'Hello World!'
+    }
+}
+task printProps {
+    doLast {
+        println gradlePropertiesProp
+        println sysProp
+        println systemProjectProp
+        println system
+        println System.properties['system']
+
+//        println System.properties['org.gradle.caching']
+//        println System.properties['caching']
+    }
+}
+
+
+//gradle -q \
+//-PgradlePropertiesProp=gradlePropertiesProp2 \
+//-PsysProp=sysProp2 \
+//-PsystemProjectProp=systemProjectProp2 \
+//-Psystem=system2 \
+//-Dorg.gradle.project.gradlePropertiesProp=gradlePropertiesProp3 \
+//-Dorg.gradle.project.sysProp=sysProp3 \
+//-Dorg.gradle.project.systemProjectProp=systemProjectProp3 \
+//-Dorg.gradle.project.system=system3 \
+//printProps
+
+//gradle -q printProps
+
+// gradle wrapper --gradle-version 4.4 --gradle-distribution-url 'https://services.gradle.org/distributions/gradle-4.4-all.zip'
+// gradle wrapper --gradle-version 6.3 --gradle-distribution-url 'https://services.gradle.org/distributions/gradle-6.3-all.zip'
+
+//task wrapper(type: Wrapper) {
+//    gradleVersion = '4.4'
+//    distributionBase = 'GRADLE_USER_HOME'
+//    distributionPath = 'wrapper/dists'
+//    distributionUrl = 'https://services.gradle.org/distributions/gradle-4.4-all.zip'
+//    zipStoreBase = 'GRADLE_USER_HOME'
+//    zipStorePath = 'wrapper/dists'
+//}
+
+// gradle help -task
+// gradle help --task tasks
